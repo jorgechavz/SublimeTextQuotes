@@ -1,18 +1,25 @@
-<?php 
-require 'includes/conexion.php';
-include 'includes/simple_html_dom.php';
-$url = "http://www.adafruit.com";
-$html = file_get_html($url);
-$frase = $html->find('.quotes-large');
-$frase = $frase[0];
-$autor = $frase->find('a');
-$href = $autor[0]->href;
-$imagen = file_get_html($href);
-$imagen = $imagen->find(".image");
-$imagen = $imagen[0]->find('img');
-$partes = explode("-", $frase);
-
-$imagen = $imagen[0]->src;
-$frase = $partes[0];
-$autor = $autor[0];		
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sublime Text Quotes</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="window">
+		<div id="top">
+			<a href="#"></a>
+			<a href="#"></a>
+			<a href="#"></a>
+		</div>
+		<div id="space">
+			<div id="lines"></div>
+			<div id="phrase">
+				<h1></h1>
+				<img src="" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
