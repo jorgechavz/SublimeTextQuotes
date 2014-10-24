@@ -26,14 +26,15 @@ class Phrases
 	}
 
 	public function addQuote($phrase,$author,$img_src){		
-		if($this->verifySlug($this->slug($phrase)))
-			$sql = "INSERT INTO phrases (phrase,author,img_src) VALUES('$phrase','$author','$img_src')";
-			echo $sql;
-			$query = mysql_query($sql) or die(mysql_error());				
+		$slug = $this->slug($phrase);	
+		if(!$this->existe($slug)){
+			$sql = "INSERT INTO phrases (phrase,author,slug,img_src) VALUES('$phrase','$author','$slug','$img_src')";			
+			mysql_query($sql) or die("Error: ".mysql_error());
+		}
 	}
-	public function verifySlug($slug){
+	public function existe($slug){
 		$sql = "SELECT COUNT(phrase_id) as count FROM phrases WHERE slug = '$slug'";
-		$query = mysql_query($sql) or die("Something wrong with 'verifySlug' method: ".mysql_error());
+		$query = mysql_query($sql) or die("Something wrong with 'exite' method: ".mysql_error());
 		$count = mysql_fetch_array($query);
 		if($count['count']==1) 
 			return true;
