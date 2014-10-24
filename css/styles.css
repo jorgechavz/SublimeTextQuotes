@@ -24,7 +24,7 @@ body,html{
 	float: left;
 	width: 85%;
 	text-align: center;
-	padding:3em;
+	padding: 3em 10em;
 	box-sizing:border-box;
 }
 #top a:nth-child(1){
