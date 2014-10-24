@@ -41,5 +41,27 @@ class Phrases
 		else
 			return false;	
 	}
+	public function getNicePhrase($phrase){
+		$words = explode(" ", $phrase);
+		$half = count($words) / 2;
+		$final = "<span class='pink'>";		
+		for($i = 0;$i < $half-1; $i++){
+			$final .= $words[$i]." ";
+			unset($words[$i]);
+		}
+		$final .= "</span>";		
+		$final .= "<span class='green'>";
+		foreach($words as $word){
+			$final .= $word." ";
+		}
+		$final .= "</span>";		
+		return $final;
+	}
+	public function getRandomPhrase(){
+		$sql = "SELECT * FROM phrases ORDER BY rand()";
+		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
+		$fetch = mysql_fetch_array($query);
+		return $fetch;
+	}
 }
 ?>
