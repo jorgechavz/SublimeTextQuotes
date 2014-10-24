@@ -29,5 +29,7 @@ $phrase = str_replace('"', "", $phrase);
 
 
 if($phrase != "")
-	$obj->addQuote($phrase,$author,$image);	
+	$added = $obj->addQuote($phrase,$author,$image);
+	if(!$added)
+		header("Location: quote.php");
 ?>

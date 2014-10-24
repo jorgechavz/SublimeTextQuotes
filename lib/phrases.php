@@ -30,6 +30,9 @@ class Phrases
 		if(!$this->existe($slug)){
 			$sql = "INSERT INTO phrases (phrase,author,slug,img_src) VALUES('$phrase','$author','$slug','$img_src')";			
 			mysql_query($sql) or die("Error: ".mysql_error());
+			return true;
+		}else{
+			return false;
 		}
 	}
 	public function existe($slug){
