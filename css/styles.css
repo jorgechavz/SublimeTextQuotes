@@ -47,7 +47,7 @@ body,html{
 	border-radius: 50%;
 	width: 10em;
 	height: 10em;
-	margin:auto;
+	margin: 35px auto;
 	border:2px solid whitesmoke;
 	background-size: cover;
 }
@@ -80,10 +80,26 @@ h1{
 	width: 100%;
 	float: left;
 	text-align: right;
-	font-size: 2em;
-	color:whitesmoke;
+	font-size: 2em;	
+	color: #48beef;
 }
 #author a{
 	color: #48beef;
-
+}
+#new-quote{
+	padding: 10px;
+	background-color: #ae81ff;
+	color:white;
+	position: absolute;
+	bottom: 1em;
+	right:1em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 2em;
+	border-radius: 50%;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	font-family: 'Helvetica',arial;
+	line-height: 1;
 }
