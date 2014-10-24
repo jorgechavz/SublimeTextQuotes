@@ -66,5 +66,41 @@ class Phrases
 		$fetch = mysql_fetch_array($query);
 		return $fetch;
 	}
+
+	public function getLastPhrase(){
+		$sql = "SELECT * FROM phrases ORDER BY phrase_id LIMIT 1";
+		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
+		$fetch = mysql_fetch_array($query);
+		return $fetch;
+	}
+	public function getNextPhrase($phrase_id){
+		$phrase_id++;
+		$sql 	= "SELECT * FROM phrases WHERE phrase_id = '$phrase_id' LIMIT 1";
+		$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
+		if(mysql_num_rows($query)>0){
+			$fetch 	= mysql_fetch_array($query); 
+			return $fetch;
+		}else{
+			$sql 	= "SELECT * FROM phrases ORDER BY phrase_id LIMIT 1";
+			$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
+			$fetch 	= mysql_fetch_array($query); 
+			return $fetch;
+		}
+	}
+
+	public function getPreviousPhrase($phrase_id){
+		$phrase_id--;
+		$sql 	= "SELECT * FROM phrases WHERE phrase_id = '$phrase_id' LIMIT 1";
+		$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
+		if(mysql_num_rows($query)>0){
+			$fetch 	= mysql_fetch_array($query); 
+			return $fetch;
+		}else{
+			$sql 	= "SELECT * FROM phrases ORDER BY phrase_id LIMIT 1";
+			$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
+			$fetch 	= mysql_fetch_array($query); 
+			return $fetch;
+		}
+	}
 }
 ?>

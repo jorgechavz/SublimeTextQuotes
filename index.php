@@ -16,7 +16,8 @@ extract($phrase);
 	<link rel="stylesheet" href="css/animate.css">
 	<div id="fb-root"></div>	
 </head>
-<body>
+<body data-id="<?= $phrase_id; ?>">
+	<a href="https://github.com/jorgechavz/SublimeTextQuotes" target="_blank" id="forkme" title="Fork me"><img src="img/forkme.png" alt="Fork me"></a>
 	<div id="window">
 		<div id="top">
 			<a href="#"></a>
