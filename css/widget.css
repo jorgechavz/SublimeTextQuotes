@@ -1,0 +1,54 @@
+body{
+	background-color: #323232;
+	font-family: 'Chau Philomene One', sans-serif;
+	padding: 5em;
+}
+a{
+	text-decoration: none;
+}
+.pink{
+	color: #da1c5c;
+}
+.green{
+	color: #a6e22e;
+}
+h1{
+	width: 100%;
+	font-size: 3em;
+	margin: 0px;
+	font-family: 'Helvetica',arial;
+	font-weight: normal;
+}
+#author{
+	width: 100%;
+	float: left;
+	text-align: right;
+	font-size: 2em;	
+	color: #48beef;
+}
+#author a{
+	color: #48beef;
+}
+
+@media screen and (max-width: 768px){
+	h1{
+		font-size: 3em;
+	}
+	h1 img{
+		width: 1em;
+	}
+	body{
+		padding: 5px;
+	}
+	#author{
+		font-size: 2em;
+	}
+}
+@media screen and (max-width: 400px){
+	h1{
+		font-size: 1em;
+	}
+	#author{
+		font-size: 1em;
+	}
+}
