@@ -17,14 +17,14 @@ body,html{
 }
 #lines{
 	float: left;
-	width: 15%;
+	width: 8%;
 	background-position: -85px 15px;
 }
 #phrase{
 	float: left;
-	width: 85%;
+	width: 92%;
 	text-align: center;
-	padding: 3em 10em;
+	padding: 5em 5em;
 	box-sizing:border-box;
 }
 #top a:nth-child(1){
@@ -110,4 +110,37 @@ h1{
 }
 #forkme img{
 	width: 10em;
+}
+@media screen and (max-width: 768px){
+	h1{
+		font-size: 2em;
+	}
+	h1 img{
+		width: 1em;
+	}	
+	#author{
+		font-size: 2em;
+	}
+	#lines span{
+		font-size: 2em;
+	}
+	#top a{
+		width: 1.4em;
+		height: 1.4em;
+	}
+	#img-author{
+		display: inline-block;
+		margin: auto;
+	}
+	#phrase{
+		padding: 2em 2em;
+	}
+}
+@media screen and (max-width: 400px){
+	h1{
+		font-size: 1em;
+	}
+	#author{
+		font-size: 1em;
+	}
 }
