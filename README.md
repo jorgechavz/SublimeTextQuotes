@@ -27,3 +27,5 @@ UNIQUE (
 ) ENGINE = MYISAM AUTO_INCREMENT=1;
 <pre>
 <code>
+#Final view
+<img src="https://scontent-dfw.xx.fbcdn.net/hphotos-xpa1/t31.0-8/1614166_1095482460465853_4841536979031274716_o.png"
