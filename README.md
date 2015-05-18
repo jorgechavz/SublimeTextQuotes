@@ -28,6 +28,6 @@ UNIQUE (
 </code>
 </pre>
 #Final view
-<img src="https://scontent-dfw.xx.fbcdn.net/hphotos-xpa1/t31.0-8/1614166_1095482460465853_4841536979031274716_o.png"
+<img src="https://scontent-dfw.xx.fbcdn.net/hphotos-xpa1/t31.0-8/1614166_1095482460465853_4841536979031274716_o.png">
 #Online demo
 <a href="http://sublimetextquotes.herokuapp.com" target="_blank">http://sublimetextquotes.herokuapp.com</a>
