@@ -90,22 +90,37 @@ h1{
 #author a{
 	color: #48beef;
 }
+#instructions {
+  position: absolute;
+  left: -462px;
+  width: 445px;
+  color: rgb(221, 221, 221);
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px 0px;
+	top: 0px;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
 #new-quote{
 	padding: 10px;
-	background-color: #ae81ff;
+	background-color: #666;
 	color:white;
-	position: absolute;
+	position: fixed;
 	bottom: 1em;
 	right:1em;
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 1em;
 	border-radius: 50%;
 	width: 1em;
 	height: 1em;
 	text-align: center;
 	font-family: 'Helvetica',arial;
 	line-height: 1;
+}
+#new-quote:hover #instructions{
+	opacity: 1;
 }
 #forkme{
 	position: absolute;

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Class for managing the phrases
 */
@@ -25,10 +25,10 @@ class Phrases
 		return $sname;
 	}
 
-	public function addQuote($phrase,$author,$img_src){		
-		$slug = $this->slug($phrase);	
+	public function addQuote($phrase,$author,$img_src){
+		$slug = $this->slug($phrase);
 		if(!$this->existe($slug)){
-			$sql = "INSERT INTO phrases (phrase,author,slug,img_src) VALUES('$phrase','$author','$slug','$img_src')";			
+			$sql = "INSERT INTO phrases (phrase,author,slug,img_src) VALUES('$phrase','$author','$slug','$img_src')";
 			mysql_query($sql) or die("Error: ".mysql_error());
 			return true;
 		}else{
@@ -39,25 +39,25 @@ class Phrases
 		$sql = "SELECT COUNT(phrase_id) as count FROM phrases WHERE slug = '$slug'";
 		$query = mysql_query($sql) or die("Something wrong with 'exite' method: ".mysql_error());
 		$count = mysql_fetch_array($query);
-		if($count['count']==1) 
+		if($count['count']==1)
 			return true;
 		else
-			return false;	
+			return false;
 	}
 	public function getNicePhrase($phrase){
 		$words = explode(" ", $phrase);
 		$half = count($words) / 2;
-		$final = "<span class='pink'>";		
+		$final = "<span class='pink'>";
 		for($i = 0;$i < $half-1; $i++){
 			$final .= $words[$i]." ";
 			unset($words[$i]);
 		}
-		$final .= "</span>";		
+		$final .= "</span>";
 		$final .= "<span class='green'>";
 		foreach($words as $word){
 			$final .= $word." ";
 		}
-		$final .= "</span>";		
+		$final .= "</span>";
 		return $final;
 	}
 	public function getRandomPhrase(){
@@ -78,12 +78,12 @@ class Phrases
 		$sql 	= "SELECT * FROM phrases WHERE phrase_id = '$phrase_id' LIMIT 1";
 		$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
 		if(mysql_num_rows($query)>0){
-			$fetch 	= mysql_fetch_array($query); 
+			$fetch 	= mysql_fetch_array($query);
 			return $fetch;
 		}else{
 			$sql 	= "SELECT * FROM phrases ORDER BY phrase_id LIMIT 1";
 			$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
-			$fetch 	= mysql_fetch_array($query); 
+			$fetch 	= mysql_fetch_array($query);
 			return $fetch;
 		}
 	}
@@ -93,14 +93,16 @@ class Phrases
 		$sql 	= "SELECT * FROM phrases WHERE phrase_id = '$phrase_id' LIMIT 1";
 		$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
 		if(mysql_num_rows($query)>0){
-			$fetch 	= mysql_fetch_array($query); 
+			$fetch 	= mysql_fetch_array($query);
 			return $fetch;
 		}else{
 			$sql 	= "SELECT * FROM phrases ORDER BY phrase_id LIMIT 1";
 			$query 	= mysql_query($sql)or die("Something went wrong in getNextPhrase: ".mysql_error());
-			$fetch 	= mysql_fetch_array($query); 
+			$fetch 	= mysql_fetch_array($query);
 			return $fetch;
 		}
 	}
+
+	
 }
 ?>

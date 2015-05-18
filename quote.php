@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'includes/db.php';
 include 'lib/phrases.php';
 include 'includes/simple_html_dom.php';
@@ -11,7 +11,6 @@ if($phrase = $html->find('.quotes-large')){
 	$phrase = $html->find('.quotes-medium');
 }
 $phrase = $phrase[0];
-
 $author = $phrase->find('a');
 $author = $author[0];
 $href 	= $author->href;
@@ -20,7 +19,7 @@ $parts = explode("-", $phrase);
 if($author != "")
 	$image 	= file_get_html($href);
 	if($image 	= $image->find(".image"))
-		$image 	= $image[0]->find('img');	
+		$image 	= $image[0]->find('img');
 		$image 	= $image[0]->src;
 //Our final data
 $phrase = $parts[0];
