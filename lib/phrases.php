@@ -60,10 +60,15 @@ class Phrases
 		$final .= "</span>";
 		return $final;
 	}
+	public function getAllPhrases(){
+		$sql = "SELECT * FROM phrases ORDER BY phrase_id DESC";
+		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
+		return $query;
+	}
 	public function getRandomPhrase(){
 		$sql = "SELECT * FROM phrases ORDER BY rand()";
 		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
-		$fetch = mysql_fetch_array($query);
+		$fetch = mysql_fetch_assoc($query);
 		return $fetch;
 	}
 
@@ -103,6 +108,6 @@ class Phrases
 		}
 	}
 
-	
+
 }
 ?>

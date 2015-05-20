@@ -1,0 +1,12 @@
+Options -Multiviews
+
+DirectoryIndex index.php index.html
+
+<Files 403.shtml>
+  order allow,deny
+  allow from all
+</Files>
+
+Options +FollowSymLinks
+
+RewriteRule ^admin$ ./admin/index.php [QSA,L]
