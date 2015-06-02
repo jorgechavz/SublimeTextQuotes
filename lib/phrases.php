@@ -25,11 +25,17 @@ class Phrases
 		return $sname;
 	}
 
+	public function getAuthors(){
+		$sql = "SELECT author,img_src FROM phrases GROUP BY author ORDER BY phrase_id DESC";
+		$query = mysql_query($sql) or die("Somethig went wrong in 'getAuthors' method: ".mysql_error());
+		return $query;
+	}
+
 	public function addQuote($phrase,$author,$img_src){
 		$slug = $this->slug($phrase);
 		if(!$this->existe($slug)){
 			$sql = "INSERT INTO phrases (phrase,author,slug,img_src) VALUES('$phrase','$author','$slug','$img_src')";
-			mysql_query($sql) or die("Error: ".mysql_error());
+			mysql_query($sql);
 			return true;
 		}else{
 			return false;
@@ -61,12 +67,12 @@ class Phrases
 		return $final;
 	}
 	public function getAllPhrases(){
-		$sql = "SELECT * FROM phrases ORDER BY phrase_id DESC";
+		$sql = "SELECT phrase_id, phrase, img_src, author FROM phrases GROUP BY author ORDER BY phrase_id DESC";
 		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
 		return $query;
 	}
 	public function getRandomPhrase(){
-		$sql = "SELECT * FROM phrases ORDER BY rand()";
+		$sql = "SELECT phrase_id, phrase, img_src, author FROM phrases ORDER BY rand()";
 		$query = mysql_query($sql) or die("Somethig went wrong in 'getRandomPhrase' method: ".mysql_error());
 		$fetch = mysql_fetch_assoc($query);
 		return $fetch;

@@ -1,6 +1,4 @@
-<?php 
-
-$conexion = mysql_connect("localhost","jorge_chavez","+)}9#i2U[T=W");
-($conexion) ? $db = mysql_select_db("jorge_xpressa") : die("Error en la conexxion: ".mysql_error());
-($db) ? "" : die("Error al seleccionar la base de datos ".mysql_error());
- ?>
+<?php
+$conexion = mysql_connect("localhost","p24183r9_folklor","DASd201.dsa");
+$db = mysql_select_db("p24183r9_main") or die(mysql_error());
+?>

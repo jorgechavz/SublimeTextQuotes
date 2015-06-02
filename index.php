@@ -45,12 +45,20 @@ extract($phrase);
 				<?php } ?>
 				<div class="fb-like" data-href="https://www.facebook.com/SublimeTextQuotes" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
 			</div>
+
+			<div id="phone">
+				<img src="public/img/mockup.png" alt="Mockup Sublime Text Quotes" />
+				<div class="badges">
+					<a href="https://play.google.com/store/apps/details?id=com.xpressa.jorge.climita" target="_blank"><img src="public/img/badge.png" /></a>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<a href="#" title="Add new quote" id="new-quote"><i class="fa fa-question-circle"></i><span id="instructions">R = Random Quote | <i class="fa fa-arrow-left"></i> = Prev Quote | <i class="fa fa-arrow-right"></i> = Next Quote</span></a>
+	<a href="#" title="Info" id="new-quote"><i class="fa fa-question-circle"></i><span id="instructions">R = Random Quote | <i class="fa fa-arrow-left"></i> = Prev Quote | <i class="fa fa-arrow-right"></i> = Next Quote</span></a>
+
 	<script src="public/js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="public/js/script.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="public/js/script.js" type="text/javascript" charset="utf-8"></script>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
@@ -58,5 +66,16 @@ extract($phrase);
 	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=131923847009565&version=v2.0";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-63260011-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </body>
 </html>

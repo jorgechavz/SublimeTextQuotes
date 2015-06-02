@@ -8,6 +8,18 @@ body,html{
 	font-family: 'Chau Philomene One', sans-serif;
 	background-color: #323232;
 }
+
+#phone{
+	text-align: center;
+	padding-top: 100px;
+}
+#phone img{
+	width: 300px;
+	display: inline-block;
+}
+#phone .badges img{
+	width: 200px;
+}
 #top{
 	float: left;
 	width: 100%;

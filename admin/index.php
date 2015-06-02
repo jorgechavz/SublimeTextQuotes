@@ -3,7 +3,6 @@ include '../includes/db.php';
 include '../lib/phrases.php';
 $obj = new Phrases();
 $q = $obj->getAllPhrases();
-
 ?>
 <!DOCTYPE html>
  <html>

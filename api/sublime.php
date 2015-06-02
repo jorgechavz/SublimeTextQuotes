@@ -6,6 +6,7 @@ $obj = new Phrases();
 $final = $obj->getRandomPhrase();
 $show = array();
 $final['author'] = strip_tags($final['author']);
+$final['phrase'] = str_replace ("   ", "", trim($final['phrase']));
 
 
 header('Access-Control-Allow-Origin: *');
